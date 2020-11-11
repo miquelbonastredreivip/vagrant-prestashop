@@ -7,8 +7,9 @@ if len(sys.argv) < 2 :
   print("ERROR: falta URL a cridar")
   exit(1)
 
-jsonData='{"error":false,"numFiles":24078,"lastId":500}'
-url="http://127.0.0.1/index.php"
+#jsonData='{"error":false,"numFiles":24078,"lastId":500}'
+#url="http://127.0.0.1:8080/index.php"
+url=sys.argv[1]
 maxIterations = 2000
 
 arrayData = ''

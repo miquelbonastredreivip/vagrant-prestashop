@@ -1,3 +1,23 @@
+packages:
+  pkgs:
+    wanted:
+      - wget
+      - unzip
+
+mysql:
+  server:
+    root_password: ''
+    user: mysql
+  database:
+    - prestashop
+  user:
+    prestashop:
+      password: ~
+      host: localhost
+      databases:
+        - database: prestashop
+          grants: ['all privileges']
+    
 
 
 #
@@ -16,3 +36,11 @@ php:
           max_input_vars: 10000     # https://www.php.net/manual/en/info.configuration.php#ini.max-input-vars
           #max_execution_time: 360  # https://www.php.net/manual/en/info.configuration.php#ini.max-execution-time
 
+apache:
+  sites:
+    prestashop:
+      port: 8080
+      enabled: true
+      template_file: salt://apache/config/vhosts/standard.tmpl
+      # This should not be necessary it doesn't work ...
+      DocumentRoot: /var/www/prestashop

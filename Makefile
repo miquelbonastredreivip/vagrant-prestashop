@@ -4,20 +4,16 @@ all: provision
 
 clean: destroy delete_logs
 
-reset:  validate clean up-log
+reset:  validate clean up
 
 validate:
 	vagrant validate
 
 up: validate
-	vagrant up
-
-up-log: validate
 	vagrant up 2>&1 | tee up.log
 
 reload: validate
 	vagrant reload
-
 
 provision: validate
 	vagrant provision
@@ -27,4 +23,3 @@ destroy: validate
 
 delete_logs:
 	rm -f *.log
-
