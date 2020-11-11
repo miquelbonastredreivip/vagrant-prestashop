@@ -19,6 +19,8 @@ gitfs_remotes:
     - base: v1.1.0
   - https://github.com/saltstack-formulas/mysql-formula.git:
     - base: v0.54.2
+  - https://github.com/saltstack-formulas/packages-formula.git:
+    - base: v0.11.1
 
 fileserver_backend:
   - roots

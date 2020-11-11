@@ -7,7 +7,8 @@ Vagrant.configure("2") do |config|
     host.vm.hostname = "vanilla-prestashop"
     host.vm.synced_folder "salt/roots/",   "/srv/salt/"
     host.vm.synced_folder "salt/pillar/",  "/srv/pillar/"
-    host.vm.network "forwarded_port", guest: 80, host: 8080
+    #host.vm.network "forwarded_port", guest: 80, host: 8080
+    host.vm.network "forwarded_port", guest: 8080, host: 8080
   end
 
   # Necessitem aquest paquet abans d'executar
