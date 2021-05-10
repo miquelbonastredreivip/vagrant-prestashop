@@ -114,8 +114,14 @@ install_prestashop:
     - recurse:
       - user
 
-post-install-prestashop:
+post-remove-install-dir:
   file.absent:
     - name: {{install_dir}}
     - require:
       - install_prestashop
+
+#post-activate-webservice:
+# Podem crear un procés PHP per a executar amb la resta d'operacions
+# fer com a post-procés:
+# - Activar i configurar WebService
+# 
